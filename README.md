@@ -53,19 +53,19 @@ The default output is `test.nc`
    4. Get about 1-2mm above the surface and press the 'z origin' button followed by the 'z probe button'
    5. Start the heightmap function.  Use the 'auto' button to set the size.  Choose a row and column count for a 5-10mm spacing.
    6. Use the "Save As..." menu option to save the height map to a file `height.map`
-   7. Disconnect the problems.
+   7. Disconnect the probes.
 
-From this point forward, do not rezero xy or z.  If you do, you'll have to start over.
+From this point forward, **do not** rezero xy or z!  If you do, you'll have to start over.
 
 
 ## Run `candle_heightmap_adjust.py` to shift the height map up
 
     ./candle_heightmap_adjust.py --input=height.map --delta=0.1
 
-This creates a `height_delta0.1.map` file.  Load that file and make
+This creates a `height_delta0.1.map` file.  Load that file into Candle and make
 sure the "Use heightmap" checkbox is checked.
 
-## Use the `test.nc` with the `height_delta0.1.map` file to check the height
+## Run the CNC job to check the height
 
 If you get no contact, then you should generate another height map that is a
 little closer, maybe
@@ -73,13 +73,13 @@ little closer, maybe
     ./candle_heightmap_adjust.py --input=height.map --delta=0.07
 
 and load the newly created `heightmap_delta0.07.map` file into Candle (again,
-no rezeroing!).  Try another run of `test.nc`.  Note that you don't need to
-retun `./make_test_box.py` because there will be no changes to the test gcode.
+no rezeroing!).  No need to reload the gcode file.  Try another CNC run. 
 
-Keep repeating until you get a sign of contact.  At this point you can
-decide how much you want to hunt for the perfect number.  Within 0.03mm
-should be good enough for any bit.  With a wider bit that does not
-break as easily, within 0.1mm should be fine.
+Keep repeating with different heightmap offsets until you get a sign of
+contact.  At this point you are close to the perfect heighmap file.  Tweak the
+final offset a little if you want or leave it be.  Within 0.03mm should be good
+enough for any bit.  With a wider bit that does not break as easily, within
+0.1mm should be fine.
 
 Now you have the height map file that you can use with your actual
 isolation routing and things *should* work out well assuming you don't
