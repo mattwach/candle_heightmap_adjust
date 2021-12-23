@@ -1,7 +1,7 @@
 # Choose inches or mm
 units: mm
 
-template_path: test_template.nc
+template_path: test_template.txt
 output_path: test.nc
 
 # Size of board, don't make it too small or you will
@@ -21,8 +21,6 @@ spindle_speed: 10000
 xy_feedrate: 150
 # units per minute z feed when not in material (can be faster)
 z_dwell_feedrate: 200
-# Height to start plunge
-z_preplunge_height: 1
 # Feedrate for plunge
 z_plunge_feedrate: 50
 # Initial and final height

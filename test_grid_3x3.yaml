@@ -1,0 +1,23 @@
+# Note that the origin of this board is the NW corner.
+# If you really dislike this, you can negate the X and Y
+# values in test_grid_3x3_template.txt to chose any corner
+# you would like.
+
+# Choose inches or mm
+units: mm
+
+template_path: test_grid_3x3_template.txt
+output_path: test_grid_3x3.nc
+
+# Spindle RPM (Note that 3018 uses 1000 or 10000 and it's not real RPM)
+spindle_speed: 10000
+# how fast to move in the xy plane (units/minute)
+xy_feedrate: 150
+# units per minute z feed when not in material (can be faster)
+z_dwell_feedrate: 200
+# Height to start plunge
+z_preplunge_height: 1
+# Feedrate for plunge
+z_plunge_feedrate: 50
+# Initial and final height
+z_initial_height: 10

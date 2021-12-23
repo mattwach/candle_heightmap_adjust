@@ -1,0 +1,72 @@
+(Creates a 3x3 grid of size 15mm x 15mm)
+(Used to evaluate bits for PCB isolation routing)
+
+G{unit_code}                            (Units in {units}) 
+G90                                     (Absolute positioning)
+G94                                     (Units per minute feed rate mode)
+
+G01 F{z_dwell_feedrate}                 (Move to starting position)
+G01 Z{z_initial_height}
+G00 X0.0 Y0.0
+M03 S{spindle_speed}                    (Start motor)
+G01 Z1.0                                (Move to dwell height)
+
+G01 F{z_plunge_feedrate}                (Row 0)
+G01 Z0.0
+G01 F{xy_feedrate}
+G01 X15.0
+
+G01 F{z_plunge_feedrate}                (Row 1)
+G01 Z1.0
+G00 Y-5.0
+G01 Z0.0
+G01 F{xy_feedrate}
+G01 X0.0
+
+G01 F{z_plunge_feedrate}                (Row 2)
+G01 Z1.0
+G00 Y-10.0
+G01 Z0.0
+G01 F{xy_feedrate}
+G01 X15.0
+
+G01 F{z_plunge_feedrate}                (Row 3)
+G01 Z1.0
+G00 Y-15.0
+G01 Z0.0
+G01 F{xy_feedrate}
+G01 X0.0
+
+G01 F{z_plunge_feedrate}                (Column 0)
+G01 Z1.0
+G00 Y0.0
+G01 Z0.0
+G01 F{xy_feedrate}
+G01 Y-15.0
+
+G01 F{z_plunge_feedrate}                (Column 1)
+G01 Z1.0
+G00 X5.0
+G01 Z0.0
+G01 F{xy_feedrate}
+G01 Y0.0
+
+G01 F{z_plunge_feedrate}                (Column 2)
+G01 Z1.0
+G00 X10.0
+G01 Z0.0
+G01 F{xy_feedrate}
+G01 Y-15.0
+
+G01 F{z_plunge_feedrate}                (Column 3)
+G01 Z1.0
+G00 X15.0
+G01 Z0.0
+G01 F{xy_feedrate}
+G01 Y0.0
+
+G01 F{z_dwell_feedrate}                 (Return to origin)
+G01 Z{z_initial_height}
+M05
+G00 X0.0
+(Test complete, EOF)

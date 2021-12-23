@@ -8,7 +8,7 @@ G01 F{z_dwell_feedrate}                 (Move to starting position)
 G01 Z{z_initial_height}
 G00 X0.0 Y0.0
 M03 S{spindle_speed}                    (Start motor)
-G01 Z{z_preplunge_height}                   (Move to dwell height)
+G01 Z1.0                                (Move to dwell height)
 
 G01 F{z_plunge_feedrate}                (Approach material)
 G01 Z0.0

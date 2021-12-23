@@ -24,9 +24,9 @@ manipulating (z shifting) the height.map file until it is right on.
 
 Looking at more detail:
 
-## Run the `make_test_box.py` file to create a test gcode file.
+## Run the `make_gcode.py` file to create a test gcode file.
 
-    ./make_test_box.py test.yaml
+    ./make_gcode.py test.yaml
 
 This creates a simple gcode file which traces a rectangle at z = 0.0.
 Parameters are in `test.yaml`. 
