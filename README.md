@@ -3,7 +3,7 @@
 This program is used to shift a Candle (CNC software) heightmap up or down
 when cutting isolation routes on copper PCBs.
 
-I have found through structured testing on two separate machines that the
+I have found through controlled testing on two separate machines that the
 heightmap function of Candle combined with a "budget" 3018 CNC machine
 has a measurement tolerance of around 0.1mm.  Interestingly, the execution
 tolerance is more precise.
@@ -47,13 +47,13 @@ The default output is `test.nc`
 
 ## Load `test.nc` into Candle.
 
-    1) Prep your material
-    2) Connect z-probes
-    3) Find your x,y origin and hit the 'xy origin' button.
-    4) Get about 1-2mm above the surface and press the 'z origin' button followed by the 'z probe button'
-    5) Start the heightmap function.  Choose a row and column count for a 5-10mm spacing.
-    6) Use the "Save As..." menu option to save the height map to a file `height.map`
-    7) Disconnect the problems.
+   1. Prep your material
+   2. Connect z-probes
+   3. Find your x,y origin and hit the 'xy origin' button.
+   4. Get about 1-2mm above the surface and press the 'z origin' button followed by the 'z probe button'
+   5. Start the heightmap function.  Use the 'auto' button to set the size.  Choose a row and column count for a 5-10mm spacing.
+   6. Use the "Save As..." menu option to save the height map to a file `height.map`
+   7. Disconnect the problems.
 
 From this point forward, do not rezero xy or z.  If you do, you'll have to start over.
 
