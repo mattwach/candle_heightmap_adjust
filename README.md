@@ -31,10 +31,7 @@ Looking at more detail:
 This creates a simple gcode file which traces a rectangle at z = 0.0.
 Parameters are in `test.yaml`. 
 
-**Make sure the width and height parameters in the yaml are larger than your design**.
-
-Otherwise you'll could be cutting a test trace right through where you want
-isolation traces later.
+**Make sure the x_start, y_start, x_end, and y_end parameters do not cut through your design**.
 
 The feed speed is also something you may want to change in the .yaml. I found
 140 mm/min to be safe but slow.  I found 200 mm/min OK most of the time but did

@@ -4,16 +4,18 @@ units: mm
 template_path: test_template.txt
 output_path: test.nc
 
-# Size of board, don't make it too small or you will
-# conflict with actual isolation traces!
-
-# Note the origin:
-# width positive, height positive -> South West
-# width positive, height negative -> North West
-# width negative, height positive -> South East
-# width negative, height negative -> North East
-width: 40
-height: -30
+# Specify the starting and ending coordinates of the desired rectangle
+# Some Notes:
+#   - You don't want to cut where your isolation traces will be.
+#   - Depending on where you placed the origin of your design, some of these
+#     numbers may be begative.
+#   - Using 0,0 as a starting point may be problematic when you
+#     switch bits and want to rezero using the probe, you may
+#     want to choose something outside of that point for that reason
+x_start: -1.0
+y_start: 1.0
+x_end: 40.0
+y_end: -30.0
 
 # Spindle RPM (Note that 3018 uses 1000 or 10000 and it's not real RPM)
 spindle_speed: 10000
