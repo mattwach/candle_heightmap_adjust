@@ -3,6 +3,8 @@
 
 from typing import Any
 
+import __main__
+import os
 import pathlib
 import sys
 import yaml
@@ -75,6 +77,9 @@ def make_test_box(yaml_path: pathlib.Path) -> None:
     cfg.data['unit_code'] = '20'
   else:
     raise UnexpectedUnitsError('Unexpected units: %s.  Expected mm or inches' % units)
+
+  if not template_path.exists():
+    template_path = pathlib.Path(os.path.join(os.path.dirname(__main__.__file__), template_path))
 
   if not template_path.exists():
     raise TemplatePathNotFoundError('Did not find template path: %s' % template_path)
